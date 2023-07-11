@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Fingers</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Inter&family=Lora&family=M+PLUS+Rounded+1c:wght@500&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,900&display=swap">
+  <script src="https://kit.fontawesome.com/fffd17f093.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style/container.css">
+  <link rel="stylesheet" href="./style/keyboard.css">
+  <link rel="stylesheet" href="./style/game.css">
+  <link rel="stylesheet" href="./style/end.css">
+</head>
+<!-- container.css -->
+
+<body>
+
+  <main>
+    <div class="container">
+      <div class="center" id="center" style="display: block">
+        <h2>Fast<span>Fingers</span></h2>
+        <button type="button" id="startbutton">Play</button>
+      </div>
+
+      <div class="choose" id="choose" style="display: none">
+        <h3>Typing in Armenian</h3>
+        <button type="button" id="button1">Keyboard</button> <br>
+        <button type="button" id="button2">Normal</button> <br>
+        <button type="button" id="button3">1 Minute</button> <br>
+      </div>
+      <!-- /container.css -->
+      <!-- Hethashvark -->
+      <div id="count-down" style="display: none">
+        <h1 id="start-count">3</h1>
+      </div>
+
+      <!-- Raketa -->
+      <figure>
+        <img id="figure-jumping" src="./assets/img/img.png" style="display: block">
+      </figure>
+
+
+      <!-- keyboard.css -->
+      <div class="keyboard" id="keyboard" style="display: none">
+        <h3>Train your fingers</h3>
+        <ul class="row row-0">
+          <li class="pinky1" id="esc">՝</li>
+          <li class="pinky1" id="Digit1">Է</li>
+          <li class="ring1" id="Digit2">Թ</li>
+          <li class="middle1" id="Digit3">Փ</li>
+          <li class="pointer1st" id="Digit4">Ձ</li>
+          <li class="pointer1st" id="Digit5">Ջ</li>
+          <li class="pointer2nd" id="Digit6">ւ</li>
+          <li class="pointer2nd" id="Digit7">և</li>
+          <li class="middle2" id="Digit8">Ր</li>
+          <li class="ring2" id="Digit9">Չ</li>
+          <li class="pinky2" id="Digit0">Ճ</li>
+          <li class="pinky2" id="Minus">-</li>
+          <li class="pinky2" id="Equal">Ժ</li>
+          <li class="pinky2" id="back">DELETE</li>
+        </ul>
+        <ul class="row row-1">
+          <li class="pinky1" id="tab">TAB</li>
+          <li class="pinky1" id="KeyQ">Ք</li>
+          <li class="ring1" id="KeyW">Ո</li>
+          <li class="middle1" id="KeyE">Ե</li>
+          <li class="pointer1st" id="KeyR">Ռ</li>
+          <li class="pointer1st" id="KeyT">Տ</li>
+          <li class="pointer2nd" id="KeyY">Ը</li>
+          <li class="pointer2nd" id="KeyU">ւ</li>
+          <li class="middle2" id="KeyI">Ի</li>
+          <li class="ring2" id="KeyO">Օ</li>
+          <li class="pinky2" id="KeyP">Պ</li>
+          <li class="pinky2" id="BracketLeft">Խ</li>
+          <li class="pinky2" id="BracketRight">Ծ</li>
+          <li class="pinky2">՚</li>
+        </ul>
+        <ul class="row row-2">
+          <li class="pinky1" id="caps">CAPS</li>
+          <li class="pinky1" id="KeyA">Ա</li>
+          <li class="ring1" id="KeyS">Ս</li>
+          <li class="middle1" id="KeyD">Դ</li>
+          <li class="pointer1st" id="KeyF">Ֆ</li>
+          <li class="pointer1st" id="KeyG">Գ</li>
+          <li class="pointer2nd" id="KeyH">Հ</li>
+          <li class="pointer2nd" id="KeyJ">Յ</li>
+          <li class="middle2" id="KeyK">Կ</li>
+          <li class="ring2" id="KeyL">Լ</li>
+          <li class="pinky2" id=";">;</li>
+          <li class="pinky2" id="Quote">Շ</li>
+          <li class="pinky2" id="enter">RETURN</li>
+        </ul>
+        <ul class="row row-3">
+          <li class="pinky1" id="left-shift">SHIFT</li>
+          <li class="pinky1" id="KeyZ">Զ</li>
+          <li class="ring1" id="KeyX">Ղ</li>
+          <li class="middle1" id="KeyC">Ց</li>
+          <li class="pointer1st" id="KeyV">Վ</li>
+          <li class="pointer1st" id="KeyB">Բ</li>
+          <li class="pointer2nd" id="KeyN">Ն</li>
+          <li class="pointer2nd" id="KeyM">Մ</li>
+          <li class="middle2" id=",">,</li>
+          <li class="ring2" id=".">:</li>
+          <li class="pinky2" id="/">/</li>
+          <li class="pinky2" id="right-shift">SHIFT</li>
+        </ul>
+        <!-- <input id="key-input" type="text" placeholder="Start typing..." /> -->
+        <!-- Matner -->
+        <img id="figure-jumping" src="./assets/img/fingers.png">
+
+        <button type="button" id="menu-k">Menu</button>
+      </div>
+      <!-- /keyboard.css -->
+
+      <!-- game.css -->
+      <div class="game" id="game" style="display: none">
+        <div class="game-part">
+          <header>
+            <div class="your-score">
+              <p class="S">Your&nbsp;Score</p>
+              <p>
+                <i class="fa-solid fa-diamond"></i>
+                <span class="score" id="your-score">0</span>
+              </p>
+            </div>
+            <div class="higher-score">
+              <p class="S">Record</p>
+              <p>
+                <i class="fa-solid fa-diamond"></i>
+                <span class="high-score" id="high-score">0</span>
+              </p>
+            </div>
+          </header>
+
+          <div class="word-div">
+            <p class="info-text" id="random-word" onmousedown="return false" onselectstart="return false">AAAAA</p>
+          </div>
+
+          <div class="input-box" id="input-box">
+            <input id="input" type="text" placeholder="Start typing..." />
+          </div>
+
+        </div>
+        <div class="time-div">
+          <div class="time-bar-div">
+            <span class="time-bar"></span>
+          </div>
+          <p><span class="time" id="game-count">7</span></p>
+        </div>
+      </div>
+
+      <!-- /game.css -->
+
+
+      <div class="end" id="end" style="display: none">
+        <h2 class="endtext">Game Over</h2>
+        <button type="button" id="end-button">Menu</button>
+        <h2 class="end-score">Your score is:<span id="end-score">0</span></h2>
+        <h2 class="endH-score">The record is: <span id="endH-score">0</span></h2>
+      </div>
+    </div>
+    <!-- end.css -->
+
+
+
+    <!-- /end.css -->
+  </main>
+
+  <!-- js-ner -->
+
+  <script src="data/words.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="data/letters.js"></script>
+
+
+  <!-- /js-ner -->
+</body>
+
+</html>
